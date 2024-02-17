@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import userRoute from "./routes/userRoute.js";
-import { authorisedUser } from "./middlewares/authMiddleware.js";
-import productRoute from "./routes/productRoute.js";
+import shopRoute from "./routes/shopRoute.js";
+import productRoute from "./routes/productRoutes.js";
 
 const app = express();
 
@@ -23,5 +22,5 @@ app.get("/", (req, res) => {
   res.send("This is homepage");
 });
 // SETUP ROUTES
-app.use("/user", userRoute);
-app.use("/products", productRoute);
+app.use("/shop", shopRoute);
+app.use("/product", productRoute);

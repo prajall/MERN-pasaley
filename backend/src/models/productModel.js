@@ -9,30 +9,28 @@ const productSchema = new mongoose.Schema(
     company: {
       type: String,
     },
-    rate: {
-      type: [
-        {
-          price: {
-            type: Number,
-            required: true,
-          },
-          quantity: {
-            type: String,
-            required: true,
-          },
+    rate: [
+      {
+        price: {
+          type: Number,
+          required: true,
         },
-      ],
-    },
+        quantity: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
     photo: {
       type: String,
     },
     dealerInfo: {
       type: String,
     },
-    user: {
+    shop: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "users",
-      // required: true,
+      ref: "Shop",
+      required: true,
     },
   },
   { timestamps: true }
