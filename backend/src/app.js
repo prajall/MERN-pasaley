@@ -8,15 +8,15 @@ const app = express();
 
 export default app;
 
+app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: ["http://localhost:5173"],
     methods: "*",
     credentials: true,
   })
 );
-app.use(express.json());
-app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("This is homepage");

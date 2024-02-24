@@ -53,7 +53,7 @@ const loginShop = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   if (req.cookies.token) {
-    res.send(apiResponse(200, "shop already loggedIn"));
+    return res.send(apiResponse(200, "shop already loggedIn"));
   }
 
   if (!email || !password) {

@@ -14,6 +14,6 @@ router.post("/add-product", authorisedShop, addProduct);
 router.delete("/:id", authorisedShop, deleteProduct);
 
 router.get("/:id/search", searchProducts);
-router.get("/:id/search/suggestions", searchSuggestions);
+router.get("/:id/search/suggestions", searchSuggestions );
 
 export default router;

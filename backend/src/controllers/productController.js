@@ -74,10 +74,9 @@ const searchProducts = asyncHandler(async (req, res) => {
 
   const partialProductName = new RegExp(searchKeyword, "i"); // Case-insensitive regex
 
-  // Find products matching the partial product name
   const searchedProducts = await Product.find({
-    _id: { $in: shop.productsList }, // Check if this matches the expected product IDs
-    name: { $regex: partialProductName }, // Match partial product names
+    _id: { $in: shop.productsList },
+    name: { $regex: partialProductName },
   });
 
   res.send(apiResponse(200, "Search Results retrieved", searchedProducts));
@@ -93,9 +92,12 @@ const searchSuggestions = asyncHandler(async (req, res) => {
     _id: { $in: shop.productsList },
     name: { $regex: `^${searchInput}`, $options: "i" },
   }).limit(10);
-  console.log("Search suggestions:", suggestions);
   res.send(apiResponse(200, "Suggestions Retrieved successfully", suggestions));
 });
+
+const uploadFile = asyncHandler(async(req,res)=>{
+  const imageUrl = req.files.image.path
+})
 
 export {
   addProduct,
