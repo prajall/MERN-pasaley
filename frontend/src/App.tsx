@@ -5,8 +5,6 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import ShopUi from "./pages/ShopUi";
 import { CardComponent } from "./types";
-import { store } from "./app/store.js";
-import { Provider } from "@radix-ui/react-toast";
 
 const SignupCardComponentProps: CardComponent = {
   title: "Signup",
