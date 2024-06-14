@@ -4,11 +4,9 @@ export type CardComponent = {
   content?: React.ReactNode,
   footer: string
 };
-
 export type AlertComponent = {
   message:string
 }
-
 export type ProductType = {
   _id: string;
   name: string;
@@ -20,5 +18,5 @@ export type ProductType = {
   ];
   company: string;
 };
-
 export type ProductArray = ProductType[];
+
